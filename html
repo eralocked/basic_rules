@@ -1,0 +1,699 @@
+<div>
+    <h6>NPC TOGGLE SWITCH</h6>
+  <input type="checkbox" class="sheet-block-switch" name="attr_block_switch" value="1">
+
+
+  
+  <div class="sheet-block-a">
+    <h3>Player Character Sheet</h3>
+    <div>
+        <button type="action" name="act_character" class="textbutton">Character</button>
+        <button type="action" name="act_journal" class="textbutton">Journal</button>
+        <button type="action" name="act_powers" class="textbutton">Powers</button>
+
+    </div>
+    <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+
+<div class="character">
+        <h2>Character</h2>
+<div class="container">
+    <div class="name top" >
+    	<h6>Name</h6><input type="text" name="attr_character_name" />
+    	<h6>Background:</h6><input type="text" name="attr_background" />
+    	<h6>Level</h6><input type="number" name="attr_level" />
+        </div>
+    <div class="multinumber top" >
+	    <h6>HP</h6><input type="number" name="attr_currHP" />/<input type="number" name="attr_maxHP">
+        <h6>SP</h6><input type="number" name="attr_currSP" />/<input type="number" name="attr_maxSP">
+        
+        </div>
+    <div class="init scroll top" >
+        <p></p>
+        <p></p>
+        <p></p>
+	    <img src="https://i.ibb.co/j4Hz975/eralocked.png" style:";">
+		</div>
+
+	<div class="attributes top2">
+		<div><h2 style="position:relative;">Attributes</h2></div>
+		<p></p>
+        <div class="atrgrid">
+		<div class="strlab atr" style="padding-top: 5px;">Strength</div><div class="strnum"><input type="number" max="10" min="1" name="attr_strength" class="sheet-short"></div> 
+        <div class="strtem"><button type="roll" name="roll_strengthcheck" value="&{template:custom} {{title=Strength Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjStrength}}}"></button></div>
+		<div>Smarts</div>  <div><input type="number" max="10" min="1" name="attr_smarts" class="sheet-short"></div>
+       <div><button type="roll" name="roll_smartscheck" value="&{template:custom} {{title=Smarts Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSmarts}}}"></button></div>
+
+
+		<div>Spirit</div>  <div><input type="number" max="10" min="1" name="attr_spirit" class="sheet-short"></div>
+        <div><button type="roll" name="roll_spiritcheck" value="&{template:custom} {{title=Spirit Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSpirit}}}"></button></div>
+
+
+		<div>Skill</div>  <div><input type="number" max="10" min="1" name="attr_skill" class="sheet-short"></div>
+        <div><button type="roll" name="roll_skillcheck" value="&{template:custom} {{title=Skill Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSkill}}}"></button></div>
+
+
+		<div>Speed</div>  <div><input type="number" max="10" min="1" name="attr_speed" class="sheet-short"></div>
+        <div><button type="roll" name="roll_speedcheck" value="&{template:custom} {{title=Speed Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSpeed}}}"></button></div>
+        
+        
+        <div>Sight</div>  <div><input type="number" max="10" min="1" name="attr_sight" class="sheet-short"></div>
+        <div><button type="roll" name="roll_testattack" value="&{template:custom} {{title=Sight Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSight}}}"></button></div>
+        
+        
+        <div>Suave</div>  <div><input type="number" max="10" min="1" name="attr_suave" class="sheet-short"></div>
+        <div><button type="roll" name="roll_testattack" value="&{template:custom} {{title=Suave Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/@{adjSuave}}}"></button></div>
+        
+        </div>
+
+	</div>
+
+	<div class="skills" style="border-color: #cf96af; border-width: 2px 2px 2px 2px; border-style: outset; text-align: center; vertical-align: middle;">
+		<div><h2>Abilities</h2></div>
+        <div style="border-style:none;" class="scroll skillgrid">
+            <h2>SOCIAL</h2>
+                    <p>
+		        <label>Charm (Suave, 20)</label><input type="number" max="100" min="1" name="attr_charm" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Charm Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{charm}+@{tempcharm}]]}"></button>
+                    <input type="number" name="attr_tempcharm"/>
+                    </p>
+                    <p>
+		        <label>Coerce (Suave, 20)</label><input type="number" max="100" min="1" name="attr_coerce" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Coerce Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{deceive}+@{tempdeceive}]]}}"></button>
+                    <input type="number" name="attr_tempcoerce"/>
+                    </p>
+                    <p>
+                    <p>
+                    <label>Insight (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_insight" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Insight Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{insight}+@{tempinsight}]]}}"></button>
+                    <input type="number" name="attr_tempinsight"/>
+                    </p>
+                    <p>
+                <label>Perform (Suave, 20)</label><input type="number" max="100" min="1" name="attr_perform" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Perform Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{perform}+@{tempperform}]]}}"></button>
+                    <input type="number" name="attr_tempperform"/>
+                    </p>
+                    <h2>URBEX</h2>
+                    </br>
+                    <p>
+                <label>Healing (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_healing" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Healing Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{healing}+@{temphealing}]]}}}}"></button>
+                    <input type="number" name="attr_temphealing"/>
+                    </p>
+                    <p>
+                <label>Investigate (Sight, 20)</label><input type="number" max="100" min="1" name="attr_investigate" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Investigate Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{investigate}+@{tempinvestigate}]]}}"></button>
+                    <input type="number" name="attr_tempinvestigate"/>
+                    </p>
+                    <p>
+		        <label>Lockpick (Skill, 20)</label><input type="number" max="100" min="1" name="attr_lockpick" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Lockpick Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{lockpick}=@{templockpick}}]]"></button>
+                    <input type="number" name="attr_templockpick"/>
+                    </p>
+                    <p>
+                <label>Parkour (Speed, 20)</label><input type="number" max="100" min="1" name="attr_parkour" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Parkour Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{parkour}+@{tempparkour}]]}}"></button>
+                    <input type="number" name="attr_tempparkour"/>
+                    </p>
+                    <p>
+                <label>Science (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_science" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Science Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{science}+@{tempscience}]]}}"></button>
+                    <input type="number" name="attr_tempscience"/>
+                    </p>
+                    <p>
+		        <label>Sneak (Skill, 20)</label><input type="number" max="100" min="1" name="attr_sneak" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Sneak Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{sneak}+@{tempsneak}]]}}}}"></button>
+                    <input type="number" name="attr_tempsneak"/>
+                    </p>
+                    <p>
+		        <label>Steal (Skill, 20)</label><input type="number" max="100" min="1" name="attr_steal" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Steal Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{steal}+@{tempsteal}]]"></button>
+                    <input type="number" name="attr_tempsteal"/>
+                    </p>
+                    <p>
+                <label>Survival (Spirit, 10)</label><input type="number" max="100" min="1" name="attr_survival" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Survival Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{survival}+@{tempsurvival}]]}}"></button>
+                    <input type="number" name="attr_tempsurvival"/>
+                    </p>
+                    <p>
+                <label>Tech (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_tech" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Tech Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{tech}+@{temptech}]]}}"></button>
+                    <input type="number" name="attr_temptech"/>
+                    </p>
+                    <p>
+		        <label>Traps (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_traps" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Traps Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{traps}+@{temptraps}]]}}"></button>
+                    <input type="number" name="attr_temptraps"/>
+                    </p>
+                    <p>
+                <label>Urbanautics (Smarts, 20)</label><input type="number" max="100" min="1" name="attr_urbanautics" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Urbanautics Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{urbanautics}+@{tempurbanautics}]]}}"></button>
+                    <input type="number" name="attr_tempurbanautics"/>
+                    </p>
+                    <h2>COMBAT</h2>
+            <div style=style="text-align:right; font-variant: small-caps; border:none;"> temp</div>
+                        <p>
+                <label>Melee (Strength, 20)</label><input type="number" max="100" min="1" name="attr_melee"  class="sheet-short">
+                    <button type="roll" name="roll_Melee" value="&{template:custom} {{title=Melee Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{melee}+@{tempmelee}]]}}"></button>
+                        <input type="number" name="attr_tempmelee"/>
+                        </p>
+                        <p>
+		        <label>Ranged (Sight, 20)</label><input type="number" max="100" min="1" name="attr_ranged"  class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Ranged Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{ranged}+@{tempranged}]]}}"></button>
+                        <input type="number" name="attr_tempranged"/>
+                        </p>
+                        <p>
+		        <label>Thrown (Skill, 20)</label><input type="number" max="100" min="1" name="attr_thrown"  class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Thrown Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{thrown}+@{tempthrown}]]}}}}"></button>
+                        <input type="number" name="attr_tempthrown"/>
+                        </p>
+                        <p>
+		        <label>Psychic (Smarts, 10)</label><input type="number" max="100" min="1" name="attr_psychic"  class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Psychic Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{psychic}+@{temppsychic}]]}}}}"></button>
+                        <input type="number" name="attr_temppsychic"/>
+                        </p>
+                        <p>
+		        <label>Unarmed (Spirit, 30)</label><input type="number" max="100" min="1" name="attr_unarmed" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Unarmed Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{unarmed}+@{tempunarmed}]]}}}}"></button>
+                        <input type="number" name="attr_tempunarmed"/>
+                        </p>
+                        <p>
+                <label>Dodge (Speed, 20)</label><input type="number" max="100" min="1" name="attr_dodge" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Dodge Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{dodge}+@{tempdodge}]]}}}}"></button>
+                        <input type="number" name="attr_tempdodge"/>
+                        </p>
+                        <p>
+                <label>Block (Spirit, 20)</label><input type="number" max="100" min="1" name="attr_block" class="sheet-short">
+                    <button type="roll" name="roll_testattack" value="&{template:custom} {{title=Block Check}} {{subtitle=@{character_name}}} {{result=[[1d100]]/[[@{block}+@{tempblock}]]}}}}"></button>
+                        <input type="number" name="attr_tempblock"/>
+                        </p>
+                    </br>
+        </div>
+	</div>
+
+	<div class="movement top2">
+	    <p></p><p></p><p></p><p></p>
+        <p><button type="roll" name="roll_initiative" value="&{template:custom} {{title=Initiative}} {{subtitle=@{character_name}}} {{[[@{initiative}&{tracker}]]}}">Initiative</button><input type="number" name="attr_initiative" /></p>
+		<p>Action Points<input type="number" name="attr_ap"/></p>
+        <p>Healing Dice<input type="number" name="attr_HD" />/<input type="number" name="attr_maxHD" /></p>
+        <p>PP<input type="number" name="attr_currPP" />/<input type="number" name="attr_maxPP"></p>
+        <p>Influence<input type="number" name="attr_currInflu" />/<input type="number" name="attr_maxInflu" /></p>
+        
+	</div>
+
+    <div class="attacks scroll">
+        <h2>Attacks</h2>
+            <div style="inline-grid; font-variant:small-caps;">Name      Type          Damage</div>
+            <fieldset class="repeating_skills">
+                <div>
+                <input type="text" name="attr_weaponname">
+                <select name="attr_attacktype">
+                    <option value="@{melee}">Melee</option>
+                    <option value="@{ranged}">Ranged</option>
+                    <option value="@{thrown}">Thrown</option>
+                    <option value="@{psychic}">Psychic</option>
+                    <option value="@{unarmed}">Unarmed</option>
+                    <option value="@{tech}">Tech</option>
+                </select>
+                <input type="text" name="attr_weapondamage" style="width:20%;"/>
+                <button type="roll" name="roll_damage" style="width:5%" value="&{template:attack} {{title=@{weaponname}}} {{subtitle=@{character_name}}} {{To Hit=[[1d100]] / [[@{attacktype} + @{sight}]]}} {{Gnarly=[[[[@{attacktype}]]/2]]}} {{Radical=[[@{attacktype}/10]]}} {{Damage=[[[[@{weapondamage}]] + [[@{attacktype} / 10]]]]}}"></button>
+                </div>
+        </fieldset>
+        </div>
+
+
+	<div class="emotions">
+	    <h2>Equipment</h2>
+	    <div style="font-size:10px; font-variant:small-caps">Money</div>
+	    $<input type="text" name="attr_money" />
+	   <label style="font-size:10px; font-variant:small-caps;">Equipped?    Item name                                 Quantity</label>
+        <fieldset class="repeating_inventory">
+            <input type="checkbox" style="text-align:left"/>
+            <input type="text" name="attr_inv" style="width:70%">
+            <input type="text" name="attr_invquant" style="width:20%;">
+        </fieldset>
+    </div>
+    
+
+</div>
+</div>
+<div class="journal">
+    <h2>Journal/Notes</h2>
+    <div class="container2">
+  <div class="appearancetitle"><h2>Appearance</h2></div>
+  <div class="perkstitle"><h2>Perks</h2></div>
+  <div class="perks">
+    <div class="i">1</div>
+    <div class="ii">2</div>
+    <div class="iv">4</div>
+    <div class="vi">6</div>
+    <div class="viii">8</div>
+    <div class="x">10</div>
+    <div class="xii">12</div>
+    <div class="xiv">14</div>
+    <div class="xvi">16</div>
+    <div class="xviii">18</div>
+    <div class="xx">20</div>
+    <div class="xxii">22</div>
+    <div class="xxiv">24</div>
+    <div class="xxvi">26</div>
+    <div class="xxx">30</div>
+    <div class="xxviii">28</div>
+    <div class="itext"><textarea name="attr_perk1"></textarea></div>
+    <div class="iitext"><textarea name="attr_perk2"></textarea></div>
+    <div class="ivtext"><textarea name="attr_perk3"></textarea></div>
+    <div class="vitext"><textarea name="attr_perk4"></textarea></div>
+    <div class="viiitext"><textarea name="attr_perk5"></textarea></div>
+    <div class="xtext"><textarea name="attr_perk6"></textarea></div>
+    <div class="xiitext"><textarea name="attr_perk7"></textarea></div>
+    <div class="xivtext"><textarea name="attr_perk8"></textarea></div>
+    <div class="xvitext"><textarea name="attr_perk9"></textarea></div>
+    <div class="xviiitext"><textarea name="attr_perk10"></textarea></div>
+    <div class="xxtext"><textarea name="attr_perk11"></textarea></div>
+    <div class="xxiitext"><textarea name="attr_perk12"></textarea></div>
+    <div class="xxivtext"><textarea name="attr_perk13"></textarea></div>
+    <div class="xxvitext"><textarea name="attr_perk14"></textarea></div>
+    <div class="xxviiitext"><textarea name="attr_perk15"></textarea></div>
+    <div class="xxxtext"><textarea name="attr_perk16"></textarea></div>
+  </div>
+  <div class="appearancegrid">
+    <div class="butt">Eye color</div>
+    <div class="fart">Hair color</div>
+    <div class="ass">Height</div>
+    <div class="dick">Size</div>
+    <div class="shit"><input type="text" name="attr_eyecolor"></div>
+    <div class="cunt"><input type="text" name="attr_haircolor"></div>
+    <div class="timallen"><input type="text" name="attr_height"></div>
+    <div class="donkeykong"><input type="text" name="attr_size"></div>
+  </div>
+  <div class="backstorytitle"><h2>Backstory</h2></div>
+  <div class="backstoryfield"><textarea name="attr_backstory"></textarea></div>
+</div> 
+</div>
+<div class="powers">
+    <h2>Powers</h2>
+    <div class="pgrid2" style="max-height:36px;">
+        <div class="header">
+            <h2>Rank 20</h2>
+        </div>
+        <div class="header2">
+            <h2>Rank 40</h2>
+        </div>
+        <div class="header3">
+            <h2>Rank 60</h2>
+        </div>
+        <div class="header4">
+            <h2>Rank 80</h2>
+        </div>
+        <div class="header5">
+            <h2>Rank 100</h2>
+        </div>
+        </div>
+        <div class="pgrid">
+        <div class="twenty">
+            <fieldset class="repeating_powers">
+                <div class="pname"><h5>Name</h5><input type="text" name="attr_powername"></div>
+                <div class="pcost"><h5>Cost</h5><input type="text" name="attr_powercost"></div>
+                <div class="pdesc" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc}}} {{To Hit=[[1d100]] / [[[[@{psychic}]] + [[@{sight}]]]]}} {{damage=[[@{damage}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset>       
+       </div>
+                  
+        <div class="fourty">
+            <fieldset class="repeating_powers">
+                <div class="pname2"><h5>Name</h5><input type="text" name="attr_powername2"></div>
+                <div class="pcost2"><h5>Cost</h5><input type="text" name="attr_powercost2"></div>
+                <div class="pdesc2" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc2"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage2"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername2}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc2}}} {{To Hit=[[1d100]] / [[[[@{psychic}]] + [[@{sight}]]]]}} {{damage=[[@{damage2}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset>
+        </div>
+              
+                    
+        <div class="sixty">
+            <fieldset class="repeating_powers">
+                <div class="pname3"><h5>Name</h5><input type="text" name="attr_powername3"></div>
+                <div class="pcost3"><h5>Cost</h5><input type="text" name="attr_powercost3"></div>
+                <div class="pdesc3" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc3"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage3"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername3}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc3}}} {{To Hit=[[1d100]] / [[[[@{psychic}]] + [[@{sight}]]]]}} {{damage=[[@{damage3}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset>
+        </div>
+              
+                    
+        <div class="eighty">
+            <fieldset class="repeating_powers">
+                <div class="pname4"><h5>Name</h5><input type="text" name="attr_powername4"></div>
+                <div class="pcost4"><h5>Cost</h5><input type="text" name="attr_powercost4"></div>
+                <div class="pdesc4" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc4"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage4"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername4}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc4}}} {{To Hit=[[1d100]] / [[[[@{psychic}]] + [[@{sight}]]]]}} {{damage=[[@{damage4}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset>
+        </div>
+              
+                    
+        <div class="hundo">
+            <fieldset class="repeating_powers">
+                <div class="pname5"><h5>Name</h5><input type="text" name="attr_powername5"></div>
+                <div class="pcost5"><h5>Cost</h5><input type="text" name="attr_powercost5"></div>
+                <div class="pdesc5" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc5"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage5"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername5}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc5}}} {{To Hit=[[1d100]] / [[[[@{psychic}]] + [[@{sight}]]]]}} {{damage=[[@{damage5}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset>
+        </div>
+              
+    </div>
+</div>
+
+              
+    </div>
+ <div class="sheet-block-b">
+    <h3>NPC Sheet</h3>
+    <div class="monsheet">
+  <div class="nameblock">
+    <div class="level"><h6>Level</h6><input type="number" name="attr_level"></div>
+    <div class="monname"><h6>Name</h6><input type="text" name="attr_character_name"></div>
+    <div class="cash"><h6>Cash</h6>$<input type="number" name="attr_money"></div>
+    <div class="hp"><h6>HP</h6><input type="number" name="attr_hp"><input type="number" name="attr_maxhp"></div>
+    <div class="pp"><h6>PP</h6><input type="number" name="attr_pp"><input type="number" name="attr_maxpp"></div>
+  </div>
+  <div class="monstats">
+    <div class="initiative"><button type="roll" style="height:10%; font-variant:small-caps; font-size:12px; vertical-align:middle;" name="roll_initiative" value="&{template:custom} {{title=Initiative}} {{subtitle=@{character_name}}} {{[[@{initiative}&{tracker}]]}}">Initiative</button><input type="number" name="attr_initiative"></div>
+    <div class="ap"><h6>Action Points</h6><input type="number" name="attr_ap"></div>
+  </div>
+  <div class="monscores">
+    <div class="str"><h6>STR</h6><input type="number" name="attr_strength"></div>
+    <div class="sma"><h6>SMA</h6><input type="number" name="attr_smarts"></div>
+    <div class="spi"><h6>SPI</h6><input type="number" name="attr_spirit"></div>
+    <div class="ski"><h6>SKI</h6><input type="number" name="attr_skill"></div>
+    <div class="spe"><h6>SPE</h6><input type="number" name="attr_speed"></div>
+    <div class="sig"><h6>SIG</h6><input type="number" name="attr_sight"></div>
+    <div class="sua"><h6>SUA</h6><input type="number" name="attr_suaveh6"></div>
+  </div>
+  <div class="monskills">
+    <div class="ranged"><h6>Ranged</h6><input type="number" name="attr_ranged"></div>
+    <div class="thrown"><h6>Thrown</h6><input type="number" name="attr_thrown"></div>
+    <div class="psychic"><h6>Psychic</h6><input type="number" name="attr_psychic"></div>
+    <div class="unarmed"><h6>Unarmed</h6><input type="number" name="attr_unarmed"></div>
+    <div class="dodge"><h6>Dodge</h6><input type="number" name="attr_dodge"></div>
+    <div class="block2"><h6>Block</h6><input type="number" name="attr_block"></div>
+    <div class="melee"><h6>Melee</h6><input type="number" name="attr_melee"></div>
+    <div class="therest">
+      <div class="healing"><h6>Healing</h6><input type="number" name="attr_healing"></div>
+      <div class="sneak"><h6>Sneak</h6><input type="number" name="attr_sneak"></div>
+      <div class="lockpick"><h6>Lockpick</h6><input type="number" name="attr_lockpick"></div>
+      <div class="steal"><h6>Steal</h6><input type="number" name="attr_steal"></div>
+      <div class="traps"><h6>Traps</h6><input type="number" name="attr_traps"></div>
+      <div class="investigate"><h6>Investigate</h6><input type="number" name="attr_investigate"></div>
+      <div class="science"><h6>Science</h6><input type="number" name="attr_science"></div>
+      <div class="tech"><h6>Tech</h6><input type="number" name="attr_tech"></div>
+      <div class="survival"><h6>Survival</h6><input type="number" name="attr_survival"></div>
+      <div class="insight"><h6>Insight</h6><input type="number" name="attr_insight"></div>
+      <div class="charm"><h6>Charm</h6><input type="number" name="attr_charm"></div>
+      <div class="deceive"><h6>Coerce</h6><input type="number" name="attr_coerce"></div>
+      <div class="parkour"><h6>Parkour</h6><input type="number" name="attr_parkour"></div>
+      <div class="urbanautics"><h6>Urbanautics</h6><input type="number" name="attr_urbanautics"></div>
+      <div class="perform"><h6>Perform</h6><input type="number" name="attr_perform"></div>
+    </div>
+  </div>
+  <div class="monperks">
+    <div class="monperkheader"><h6>PERKS</h6></div>
+    <div class="monperk1"><textarea name="attr_monperk1"></textarea></div>
+    <div class="monperk2"><textarea name="attr_monperk2"></textarea></div>
+    <div class="monperk3"><textarea name="attr_monperk3"></textarea></div>
+    <div class="monperk4"><textarea name="attr_monperk4"></textarea></div>
+    <div class="monperk5"><textarea name="attr_monperk5"></textarea></div>
+    </div>
+  <div class="monattacks">        
+            <div style="inline-grid; font-variant:small-caps;" class="monattackheader">Name      Type          Damage</div>
+                <div class="monattackfield">
+                    <fieldset class="repeating_monskills">
+                <input type="text" name="attr_weaponname">
+                <select name="attr_attacktype">
+                    <option value="@{melee}">Melee</option>
+                    <option value="@{ranged}">Ranged</option>
+                    <option value="@{thrown}">Thrown</option>
+                    <option value="@{psychic}">Psychic</option>
+                    <option value="@{unarmed}">Unarmed</option>
+                    <option value="@{tech}">Tech</option>
+                </select>
+                <input type="text" name="attr_weapondamage" style="width:20%;"/>
+                <button type="roll" name="roll_damage" style="width:5%" value="&{template:attack} {{title=@{weaponname}}} {{subtitle=@{character_name}}} {{damage=[[[[@{weapondamage}]] + [[@{attacktype}/10]]]]}}"></button>
+                </div>
+                </fieldset>
+        </div>
+  <div class="monpowers">
+      <div class="monpowerheader"><h6>POWERS</h6></div>
+    <div class="mon20">
+            <fieldset class="repeating_powers">
+                <div class="pname"><h5>Name</h5><input type="text" name="attr_powername"></div>
+                <div class="pcost"><h5>Cost</h5><input type="text" name="attr_powercost"></div>
+                <div class="pdesc" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc}}} {{damage=[[[[@{damage}]]+[[@{psychic}/10]]]]}}"></button></div>
+            </fieldset>       
+ </div>
+    <div class="mon40"> <fieldset class="repeating_powers">
+                <div class="pname2"><h5>Name</h5><input type="text" name="attr_powername2"></div>
+                <div class="pcost2"><h5>Cost</h5><input type="text" name="attr_powercost2"></div>
+                <div class="pdesc2" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc2"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage2"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername2}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc2}}} {{damage=[[@{damage2}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset></div>
+    <div class="mon60"><fieldset class="repeating_powers">
+                <div class="pname3"><h5>Name</h5><input type="text" name="attr_powername3"></div>
+                <div class="pcost3"><h5>Cost</h5><input type="text" name="attr_powercost3"></div>
+                <div class="pdesc3" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc3"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage3"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername3}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc3}}} {{damage=[[@{damage3}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset></div>
+    <div class="mon80"><fieldset class="repeating_powers">
+                <div class="pname4"><h5>Name</h5><input type="text" name="attr_powername4"></div>
+                <div class="pcost4"><h5>Cost</h5><input type="text" name="attr_powercost4"></div>
+                <div class="pdesc4" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc4"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage4"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername4}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc4}}} {{damage=[[@{damage4}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset></div>
+    <div class="mon100"><fieldset class="repeating_powers">
+                <div class="pname5"><h5>Name</h5><input type="text" name="attr_powername5"></div>
+                <div class="pcost5"><h5>Cost</h5><input type="text" name="attr_powercost5"></div>
+                <div class="pdesc5" style="height:200px;"><h5>Description</h5><textarea name="attr_powerdesc5"></textarea></div>
+                <div style="height:15px;"></div>
+                <div><h5>Damage</h5><input type="text" name="attr_damage5"></div>
+                <div class="roll"><button type="roll" name="roll_power" value="&{template:spell} {{title=@{powername5}}} {{subtitle=@{character_name}}} {{desc=@{powerdesc5}}} {{damage=[[@{damage5}+[[@{psychic} /10]]]]}}"></button></div>
+            </fieldset></div>
+  </div>
+</div>
+  </div>
+</div> 
+</div> 
+
+
+
+<div>
+<input type="hidden" name="attr_adjStrength">
+<input type="hidden" name="attr_adjSkill">
+<input type="hidden" name="attr_adjSmarts">
+<input type="hidden" name="attr_adjSight">
+<input type="hidden" name="attr_adjSuave">
+<input type="hidden" name="attr_adjSpeed">
+<input type="hidden" name="attr_adjSpirit">
+<input type="hidden" name="attr_meleemod">
+<input type="hidden" name="attr_rangedmod">
+<input type="hidden" name="attr_thrownmod">
+<input type="hidden" name="attr_psychicmod">
+<input type="hidden" name="attr_unarmedmod">
+<input type="hidden" name="attr_techmod">
+<input type="hidden" name="attr_melegna">
+<input type="hidden" name="attr_ranggna">
+<input type="hidden" name="attr_throgna">
+<input type="hidden" name="attr_psycgna">
+<input type="hidden" name="attr_unargna">
+<input type="hidden" name="attr_techgna">
+<input type="hidden" name="attr_dodggna">
+<input type="hidden" name="attr_blocgna">
+<input type="hidden" name="attr_healgna">
+<input type="hidden" name="attr_sneagna">
+<input type="hidden" name="attr_lockgna">
+<input type="hidden" name="attr_steagna">
+<input type="hidden" name="attr_trapgna">
+<input type="hidden" name="attr_invegna">
+<input type="hidden" name="attr_sciegna">
+<input type="hidden" name="attr_techgna">
+<input type="hidden" name="attr_survgna">
+<input type="hidden" name="attr_insigna">
+<input type="hidden" name="attr_chargna">
+<input type="hidden" name="attr_decegna">
+<input type="hidden" name="attr_intigna">
+<input type="hidden" name="attr_bartgna">
+<input type="hidden" name="attr_inspgna">
+<input type="hidden" name="attr_perfrad">
+<input type="hidden" name="attr_melerad">
+<input type="hidden" name="attr_rangrad">
+<input type="hidden" name="attr_throrad">
+<input type="hidden" name="attr_psycrad">
+<input type="hidden" name="attr_unarrad">
+<input type="hidden" name="attr_techrad">
+<input type="hidden" name="attr_dodgrad">
+<input type="hidden" name="attr_blocrad">
+<input type="hidden" name="attr_healrad">
+<input type="hidden" name="attr_snearad">
+<input type="hidden" name="attr_lockrad">
+<input type="hidden" name="attr_stearad">
+<input type="hidden" name="attr_traprad">
+<input type="hidden" name="attr_inverad">
+<input type="hidden" name="attr_scierad">
+<input type="hidden" name="attr_techrad">
+<input type="hidden" name="attr_survrad">
+<input type="hidden" name="attr_insirad">
+<input type="hidden" name="attr_charrad">
+<input type="hidden" name="attr_decerad">
+<input type="hidden" name="attr_intirad">
+<input type="hidden" name="attr_bartrad">
+<input type="hidden" name="attr_insprad">
+<input type="hidden" name="attr_perfrad">
+</div>
+
+
+<script type="text/worker">
+
+    
+    //button to change character sheet tab
+    const buttonlist = ["character","journal","powers"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+    
+    //MOTHERFUCKER LETS DO SOME MATH
+//adjust attributes to d100 values
+
+//when any attribute changes
+on("change:strength change:skill change:speed change:sight change:suave change:speed change:spirit change:melee change:ranged change:thrown change:psychic change:unarmed change:tech change:dodge change:block change:healing change:sneaks change:lockpick change:steal change:traps change:investigate change:science change:tech change:survival change:insight change:charm change:deceive change:intimidate change:barter change:inspire change:perform change:persuade", function() {
+    //get the attributes
+    getAttrs([
+        "strength",
+        "skill",
+        "smarts",
+        "sight",
+        "suave",
+        "speed",
+        "spirit",
+        "melee",
+        "ranged",
+        "thrown",
+        "psychic",
+        "unarmed",
+        "tech",
+        "dodge",
+        "block",
+        "healing",
+        "sneak",
+        "lockpick",
+        "steal",
+        "traps",
+        "investigate",
+        "science",
+        "survival",
+        "insight",
+        "charm",
+        "deceive",
+        "intimidate",
+        "barter",
+        "inspire",
+        "perform"
+        ], function(values){
+            let strength = parseInt(values.strength)||0;
+            let skill = parseInt(values.skill)||0;
+            let smarts = parseInt(values.smarts)||0;
+            let sight = parseInt(values.sight)||0;
+            let suave = parseInt(values.suave)||0;
+            let speed = parseInt(values.speed)||0;
+            let spirit = parseInt(values.spirit)||0;
+
+
+    
+    //multiply each attribute by 10 and set them to adjusted attributes
+    setAttrs({
+        adjStrength: strength * 10,
+        adjSkill: skill * 10,
+        adjSpeed: speed * 10,
+        adjSight: sight * 10,
+        adjSuave: suave * 10,
+        adjSpirit: spirit * 10,
+        adjSmarts: smarts * 10,
+        meleemod: Math.floor(melee/10),
+        rangedmod: Math.floor(ranged/10),
+        thrownmod: Math.floor(thrown/10),
+        psychicmod: Math.floor(psychic/10),
+        unarmedmod: Math.floor(unarmed/10),
+        techmod: Math.floor(tech/10)
+
+            });
+        });
+    });
+    
+</script>
+
+<rolltemplate class="sheet-rolltemplate-custom">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-template-header">
+      {{#title}}<div class="sheet-title" style="font-variant: small-caps">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle" style="font-variant: small-caps">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{attr}}{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-attack">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-template-header">
+      {{#title}}<div class="sheet-title" style="font-variant: small-caps">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle" style="font-variant: small-caps">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value"></div>
+      
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{attr}}{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-spell">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-template-header">
+      {{#title}}<div class="sheet-title" style="font-variant: small-caps">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle" style="font-variant: small-caps">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+    {{#desc}}<div class="sheet-desc">{{attr}}{{desc}}</div>{{/desc}}
+      {{#allprops() title subtitle desc color}}
+        <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+    </div>
+  </div>
+</rolltemplate>
