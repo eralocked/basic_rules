@@ -1,0 +1,1236 @@
+/* Set the min-width so that when the window is resized the look will stay consistant */
+/*Configure the tab buttons*/
+.sheet-block-a,
+.sheet-block-switch:checked ~ .sheet-block-b {
+  display: block;
+}
+
+.sheet-block-b,
+.sheet-block-switch:checked ~ .sheet-block-a {
+  display: none;
+}
+.sheet-character,
+.sheet-journal,
+.sheet-powers {
+	display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="powers"] ~ div.sheet-powers,
+.sheet-tabstoggle[value="journal"] ~ div.sheet-journal {
+	display: block;
+}
+
+
+
+
+.charsheet {
+	
+	max-width:800px;
+	text-align: center;
+	min-width:800px;
+}
+
+.sheet-container {
+    background-color: #ead1dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "name multinumber init"
+    "attributes skills movement"
+    "attacks skills emotions";
+    text-decoration: italic;
+    border-color: #cf96af;
+    border-width: 5px 5px 5px 5px;
+    border-style: double;
+    vertical-align:middle;
+}
+
+.sheet-name { 
+    grid-area: name; 
+    max-height: 150px;
+}
+.sheet-multinumber { grid-area: multinumber; max-height: 150px;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-init { 
+    grid-area: init; 
+    max-height: 150px;
+    display:block;
+    border-style: outset;
+    border-width:10px 10px 10px 10px;
+    border-color: #cf96af;
+}
+.sheet-attributes { 
+    grid-area: attributes;
+    text-decoration: italic;
+    font-variant: small-caps;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-atrgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "strlab strnum strtem"
+    "smalab smanum smatem"
+    "spilab spinum spitem"
+    "skilab skinum skitem"
+    "spelab spenum spetem"
+    "siglab signum sigtem"
+    "sualab suanum suatem";
+    border:none;
+}
+
+.sheet-atrgrid > div {
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+    
+}
+
+.sheet-strlab { grid-area: strlab; }
+
+.sheet-smalab { grid-area: smalab; }
+
+.sheet-spilab { grid-area: spilab; }
+
+.sheet-skilab { grid-area: skilab; }
+
+.sheet-spelab { grid-area: spelab; }
+
+.sheet-siglab { grid-area: siglab; }
+
+.sheet-sualab { grid-area: sualab; }
+
+.sheet-strnum { grid-area: strnum; }
+
+.sheet-smanum { grid-area: smanum; }
+
+.sheet-spinum { grid-area: spinum; }
+
+.sheet-skinum { grid-area: skinum; }
+
+.sheet-spenum { grid-area: spenum; }
+
+.sheet-signum { grid-area: signum; }
+
+.sheet-suanum { grid-area: suanum; }
+
+.sheet-strtem { grid-area: strtem; }
+
+.sheet-smatem { grid-area: smatem; }
+
+.sheet-spitem { grid-area: spitem; }
+
+.sheet-skitem { grid-area: skitem; }
+
+.sheet-spetem { grid-area: spetem; }
+
+.sheet-sigtem { grid-area: sigtem; }
+
+.sheet-suatem { grid-area: suatem; }
+
+
+.sheet-skills { 
+    grid-area: skills;
+    text-decoration: italic;
+    font-variant: small-caps;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-skills input{
+    width: 20%;
+}
+.sheet-movement { 
+    grid-area: movement;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-attacks { 
+    grid-area: attacks;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-attacks input{
+    width:32%;
+}
+.sheet-attacks select{
+    width:30%;
+    
+}
+.sheet-emotions { 
+    grid-area: emotions;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-equipment { 
+    grid-area: equipment;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-scroll {
+ overflow: auto;
+ overflow-x: hidden;
+}
+.sheet-top {
+    max-height: 150px;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+.sheet-top2 {
+    max-height: 300px;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-top3 {
+    max-height:250px;
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-container2 {
+    background-color: #ead1dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "appearancetitle appearancetitle appearancetitle appearancetitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle perkstitle"
+    "appearancegrid appearancegrid appearancegrid appearancegrid perks perks perks perks perks perks perks perks perks perks perks perks"
+    "appearancegrid appearancegrid appearancegrid appearancegrid perks perks perks perks perks perks perks perks perks perks perks perks"
+    "appearancegrid appearancegrid appearancegrid appearancegrid perks perks perks perks perks perks perks perks perks perks perks perks"
+    "appearancegrid appearancegrid appearancegrid appearancegrid perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstorytitle backstorytitle backstorytitle backstorytitle perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks"
+    "backstoryfield backstoryfield backstoryfield backstoryfield perks perks perks perks perks perks perks perks perks perks perks perks";
+        text-decoration: italic;
+    border-color: #cf96af;
+    border-width: 5px 5px 5px 5px;
+    border-style: double;
+    vertical-align: middle;
+}
+
+.sheet-appearancetitle { grid-area: appearancetitle; 
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-perkstitle { grid-area: perkstitle; 
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-perks {
+  display: grid;
+  grid-template-columns: 0.2fr 1.8fr 0.2fr 1.8fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "i itext xvi xvitext"
+    "ii iitext xviii xviiitext"
+    "iv ivtext xx xxtext"
+    "vi vitext xxii xxiitext"
+    "viii viiitext xxiv xxivtext"
+    "x xtext xxvi xxvitext"
+    "xii xiitext xxviii xxviiitext"
+    "xiv xivtext xxx xxxtext";
+  grid-area: perks;
+  text-align:center;
+  vertical-align:middle;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-i { grid-area: i; vertical-align:middle; }
+
+.sheet-ii { grid-area: ii; }
+
+.sheet-iv { grid-area: iv; }
+
+.sheet-vi { grid-area: vi; }
+
+.sheet-viii { grid-area: viii; }
+
+.sheet-x { grid-area: x; }
+
+.sheet-xii { grid-area: xii; }
+
+.sheet-xiv { grid-area: xiv; }
+
+.sheet-xvi { grid-area: xvi; }
+
+.sheet-xviii { grid-area: xviii; }
+
+.sheet-xx { grid-area: xx; }
+
+.sheet-xxii { grid-area: xxii; }
+
+.sheet-xxiv { grid-area: xxiv; }
+
+.sheet-xxvi { grid-area: xxvi; }
+
+.sheet-xxx { grid-area: xxx; }
+
+.sheet-xxviii { grid-area: xxviii; }
+
+.sheet-itext { grid-area: itext; }
+
+.sheet-iitext { grid-area: iitext; }
+
+.sheet-ivtext { grid-area: ivtext; }
+
+.sheet-vitext { grid-area: vitext; }
+
+.sheet-viiitext { grid-area: viiitext; }
+
+.sheet-xtext { grid-area: xtext; }
+
+.sheet-xiitext { grid-area: xiitext; }
+
+.sheet-xivtext { grid-area: xivtext; }
+
+.sheet-xvitext { grid-area: xvitext; }
+
+.sheet-xviiitext { grid-area: xviiitext; }
+
+.sheet-xxtext { grid-area: xxtext; }
+
+.sheet-xxiitext { grid-area: xxiitext; }
+
+.sheet-xxivtext { grid-area: xxivtext; }
+
+.sheet-xxvitext { grid-area: xxvitext; }
+
+.sheet-xxviiitext { grid-area: xxviiitext; }
+
+.sheet-xxxtext { grid-area: xxxtext; }
+
+.sheet-appearancegrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "butt shit"
+    "fart cunt"
+    "ass timallen"
+    "dick donkeykong";
+  grid-area: appearancegrid;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+  
+}
+
+.sheet-appearancegrid input {
+    width:100%;
+    height:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    overflow: auto;
+    
+}
+}
+
+.sheet-butt { grid-area: butt; }
+
+.sheet-fart { grid-area: fart; }
+
+.sheet-ass { grid-area: ass; }
+
+.sheet-dick { grid-area: dick; }
+
+.sheet-shit { grid-area: shit; }
+
+.sheet-cunt { grid-area: cunt; }
+
+.sheet-timallen { grid-area: timallen; }
+
+.sheet-donkeykong { grid-area: donkeykong; }
+
+.sheet-backstorytitle { grid-area: backstorytitle;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;}
+
+.sheet-backstoryfield { grid-area: backstoryfield; 
+    border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sheet-pgrid {
+    background-color: #ead1dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.8fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "twenty fourty sixty eighty hundo";
+            text-decoration: italic;
+    border-color: #cf96af;
+    border-width: 0px 2px 2px 2px;
+    border-style: double;
+    vertical-align: middle;
+}
+
+
+
+.sheet-pgrid2 {
+    background-color: #ead1dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.8fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "header header2 header3 header4 header5";
+            text-decoration: italic;
+    border-color: #cf96af;
+    border-width: 2px 2px 0px 2px;
+    border-style: double;
+    vertical-align: middle;
+}
+
+.sheet-header { grid-area: header;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.sheet-header2 {grid-area: header2;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.sheet-header3 {grid-area: header3;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.sheet-header4 {grid-area: header4;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.sheet-header5 {grid-area: header5;
+border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+fieldset > div {
+    border:none;
+}
+
+.sheet-pgrid button {
+    vertical-align:middle;
+    text-align:center;
+}
+
+.sheet-twenty {
+  grid-area: twenty;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+  
+}
+
+
+
+.sheet-pgrid textarea {
+        width:100%;
+    height:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    overflow: auto;
+    resize: none;
+}
+
+.sheet-pgrid input {
+    width:100%;
+
+}
+
+.sheet-pname { grid-area: pname;
+border:none;
+}
+
+.sheet-pcost { grid-area: pcost; 
+    border:none;
+}
+
+.sheet-pdesc { grid-area: pdesc; 
+    height:200px;
+    border:none;
+}
+
+.sheet-empty { grid-area: empty; 
+    border:none;
+}
+
+.sheet-roll { grid-area: roll; 
+    border:none;
+}
+
+.sheet-fourty { 
+
+  grid-area: fourty;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+    
+.sheet-pname2 { grid-area: pname2; border:none;}
+
+.sheet-pcost2 { grid-area: pcost2;border:none; }
+
+.sheet-pdesc2 { grid-area: pdesc2; border:none;}
+
+.sheet-empty2 { grid-area: empty2; border:none;}
+
+.sheet-roll2 { grid-area: roll2;border:none; }
+
+.sheet-sixty {
+
+  grid-area: sixty; 
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+    
+.sheet-pname3 { grid-area: pname3;border:none;}
+
+.sheet-pcost3 { grid-area: pcost3;border:none; }
+
+.sheet-pdesc3 { grid-area: pdesc3;border:none; }
+
+.sheet-empty3 { grid-area: empty3;border:none;}
+
+.sheet-roll3 { grid-area: roll3;border:none; }
+
+.sheet-eighty {
+
+  grid-area: eighty;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+    
+.sheet-pname4 { grid-area: pname4; border:none;}
+
+.sheet-pcost4 { grid-area: pcost4;border:none; }
+
+.sheet-pdesc4 { grid-area: pdesc4; border:none;}
+
+.sheet-empty4 { grid-area: empty4; border:none;}
+
+.sheet-roll4 { grid-area: roll4;border:none; }
+
+.sheet-hundo {
+
+  grid-area: hundo;
+  border-color: #cf96af;
+    border-width: 2px 2px 2px 2px;
+    border-style: outset;
+    text-align: center;
+    vertical-align: middle;
+}
+    
+.sheet-pname5 { grid-area: pname5; border:none;}
+
+.sheet-pcost5 { grid-area: pcost5; border:none;}
+
+.sheet-pdesc5 { grid-area: pdesc5; border:none;}
+
+.sheet-empty5 { grid-area: empty5; border:none;}
+
+.sheet-roll5 { grid-area: roll5; border:none;}
+
+.sheet-monsheet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr 1.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "nameblock nameblock monattacks monattacks monattacks"
+    "monstats monstats monattacks monattacks monattacks"
+    "monscores monscores monattacks monattacks monattacks"
+    "monskills monskills monattacks monattacks monattacks"
+    "monperks monperks monperks monperks monperks"
+    "monpowers monpowers monpowers monpowers monpowers";
+    background-color: #ead1dc;
+    border-color: #cf96af;
+    border-width: 0px 2px 2px 2px;
+    border-style: double;
+    vertical-align: middle;
+}
+
+.sheet-nameblock {
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 1.2fr 1.2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "monname monname monname monname"
+    "level cash hp pp";
+  grid-area: nameblock;
+    text-align: center;
+    vertical-align: middle;
+    
+  
+}
+
+.sheet-level { grid-area: level; }
+
+.sheet-monname { grid-area: monname; }
+
+.sheet-cash { grid-area: cash; }
+
+.sheet-hp { grid-area: hp; }
+
+.sheet-pp { grid-area: pp; }
+
+.sheet-monstats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "initiative movement reactions";
+  grid-area: monstats;
+  
+}
+
+.sheet-initiative { grid-area: initiative; }
+
+.sheet-move { grid-area: movement; }
+
+.sheet-ac { grid-area: ac; }
+
+.sheet-reactions { grid-area: reactions; }
+
+.sheet-monscores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "str sma spi ski spe sig sua";
+  grid-area: monscores;
+}
+
+.sheet-str { grid-area: str; }
+
+.sheet-sma { grid-area: sma; }
+
+.sheet-spi { grid-area: spi; }
+
+.sheet-ski { grid-area: ski; }
+
+.sheet-spe { grid-area: spe; }
+
+.sheet-sig { grid-area: sig; }
+
+.sheet-sua { grid-area: sua; }
+
+.sheet-monskills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "melee ranged thrown psychic unarmed dodge block2"
+    "therest therest therest therest therest therest therest"
+    "therest therest therest therest therest therest therest"
+    "therest therest therest therest therest therest therest";
+  grid-area: monskills;
+    
+}
+
+.sheet-ranged { grid-area: ranged; }
+
+.sheet-thrown { grid-area: thrown; }
+
+.sheet-psychic { grid-area: psychic; }
+
+.sheet-unarmed { grid-area: unarmed; }
+
+.sheet-dodge { grid-area: dodge; }
+
+.sheet-block { grid-area: block2; }
+
+.sheet-melee { grid-area: melee; }
+
+.sheet-therest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "healing sneak lockpick steal"
+    "traps investigate science tech"
+    "survival insight charm deceive"
+    "intimidate barter inspire perform";
+  grid-area: therest;
+}
+
+.sheet-healing { grid-area: healing; }
+
+.sheet-sneak { grid-area: sneak; }
+
+.sheet-lockpick { grid-area: lockpick; }
+
+.sheet-steal { grid-area: steal; }
+
+.sheet-traps { grid-area: traps; }
+
+.sheet-investigate { grid-area: investigate; }
+
+.sheet-science { grid-area: science; }
+
+.sheet-tech { grid-area: tech; }
+
+.sheet-survival { grid-area: survival; }
+
+.sheet-insight { grid-area: insight; }
+
+.sheet-charm { grid-area: charm; }
+
+.sheet-deceive { grid-area: deceive; }
+
+.sheet-intimidate { grid-area: intimidate; }
+
+.sheet-barter { grid-area: barter; }
+
+.sheet-inspire { grid-area: inspire; }
+
+.sheet-perform { grid-area: perform; }
+
+.sheet-monperks { grid-area: monperks; 
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.175fr 1.825fr;
+  gap: 0px 0px;
+  grid-template-areas:
+  "monperkheader monperkheader monperkheader monperkheader monperkheader"
+  "monperk1 monperk2 monperk3 monperk4 monperk5";
+}
+
+.sheet-monperks textarea {
+
+}
+
+.sheet-monperkheader { grid-area: monperkheader }
+.sheet-monperk1 { grid-area: monperk1 }
+.sheet-monperk2 { grid-area: monperk2 }
+.sheet-monperk3 { grid-area: monperk3 }
+.sheet-monperk4 { grid-area: monperk4 }
+.sheet-monperk5 { grid-area: monperk5 }
+
+.sheet-monattacks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.175fr 1.825fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "monattackheader monattackheader monattackheader"
+    "monattackfield monattackfield monattackfield";
+  grid-area: monattacks;
+    
+}
+
+.sheet-monattackheader { grid-area: monattackheader }
+
+.sheet-monattackfield { grid-area: monattackfield }
+
+.sheet-monattackfield input{
+    width:32%;
+}
+.sheet-monattackfield select{
+    width:30%;
+    
+}
+
+.sheet-monpowers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.125fr 1.875fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "monpowerheader monpowerheader monpowerheader monpowerheader monpowerheader"
+    "mon20 mon40 mon60 mon80 mon100";
+  grid-area: monpowers;
+    
+}
+
+.sheet-monpowerheader { grid-area: monpowerheader }
+
+.sheet-mon20 { grid-area: mon20; 
+    width:100%;
+}
+
+.sheet-mon40 { grid-area: mon40;
+width:100%;
+}
+
+.sheet-mon60 { grid-area: mon60; 
+width:100%;
+}
+
+.sheet-mon80 { grid-area: mon80; 
+width:100%;
+}
+
+.sheet-mon100 { grid-area: mon100; 
+width:100%;
+}
+
+.sheet-mon20 input,textarea {
+    width:100%;
+}
+
+.sheet-mon40 input,textarea {
+    width:100%;
+}
+
+.sheet-mon60 input,textarea {
+    width:100%;
+}
+
+.sheet-mon80 input,textarea {
+    width:100%;
+}
+
+.sheet-mon100 input,textarea {
+    width:100%;
+}
+
+p {
+    display: flex;
+    text-align:center;
+    justify-content: space-between;
+    width:100%;
+    font-variant: small-caps;
+}
+
+
+
+h2 {
+    font-variant: small-caps;
+    vertical-align:middle;
+    width:100%;
+}
+
+
+
+
+input, textarea {
+    background-color: #cce9f5;
+    text-decoration: italic;
+}
+h1, h2, h3, h4, h5, h6 {
+    background-color: #fff;
+    font-variant:small-caps;
+}
+
+h6 {
+    font-size:10px;
+}
+
+label {
+    font-size: 10px;
+}
+
+textarea {
+    width:100%;
+    height:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    overflow: auto;
+    resize: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #FEF68E;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ead1dc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cc50e2;
+}
+
+
+
+h5 {
+    width:100%;
+}
+
+
+/*begin nonattack css*/
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-custom {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-custom {
+  margin-left: -7px;
+}
+.sheet-rolltemplate-custom .sheet-container {
+  border: 5px outset;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-custom .sheet-header {
+  background: rgb(0,0,128);
+    background: linear-gradient(90deg, rgba(0,0,128,1) 35%, rgba(14,113,184,1) 100%);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: #ead1dc;
+  padding: 5px;
+}
+.sheet-rolltemplate-custom .sheet-title {
+  font-size:1.1em;
+  background-color: #ead1dc;
+}
+.sheet-rolltemplate-custom .sheet-subtitle {
+  font-size:.9em;
+  background-color: #ead1dc;
+}
+/* example colors */
+.sheet-rolltemplate-custom .sheet-container {
+  /* this is the default color */
+  --header-bg-color: #ead1dc;
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-custom .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-custom .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+/* Allprops part */
+.sheet-rolltemplate-custom .sheet-content {
+  display: grid;
+  background: #FEF68E;
+  background-size:100px 100px;
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-custom .sheet-content > div {
+  padding: 5px;
+}
+/* Left column */
+.sheet-rolltemplate-custom .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+.sheet-rolltemplate-custom .sheet-value {
+    background-color: #FEF68E;
+    
+}
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-custom .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-custom .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+/* Description field */
+.sheet-rolltemplate-custom .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+/*begin attack css*/
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-attack {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-attack {
+  margin-left: -7px;
+}
+.sheet-rolltemplate-attack .sheet-container {
+  border: 5px outset;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-attack .sheet-header {
+  background: rgb(0,0,128);
+    background: linear-gradient(90deg, rgba(0,0,128,1) 35%, rgba(14,113,184,1) 100%);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: #ead1dc;
+  padding: 5px;
+}
+.sheet-rolltemplate-attack .sheet-title {
+  font-size:1.1em;
+  background-color: #ead1dc;
+}
+.sheet-rolltemplate-attack .sheet-subtitle {
+  font-size:.9em;
+  background-color: #ead1dc;
+}
+/* example colors 
+.sheet-rolltemplate-attack .sheet-container {
+  /* this is the default color */
+  --header-bg-color: #ead1dc;
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-attack .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-attack .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+/* Allprops part */
+.sheet-rolltemplate-attack .sheet-content {
+  display: grid;
+  background: #FEF68E;
+  background-size:100px 100px;
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-attack .sheet-content > div {
+  padding: 5px;
+}
+/* Left column */
+.sheet-rolltemplate-attack .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: center;
+  background: #FEF68E;
+}
+.sheet-rolltemplate-attack .sheet-value {
+    background-color: #FEF68E;
+    
+}
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-attack .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-attack .sheet-content :nth-child(4n) {
+  background:#FEF68E;
+}
+/* Description field */
+.sheet-rolltemplate-attack .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+  background: #FEF68E;
+}
+
+/*--------------------------SPELL CSS---------------------------*/
+/*--------------------------SPELL CSS---------------------------*/
+/*--------------------------SPELL CSS---------------------------*/
+/*--------------------------SPELL CSS---------------------------*/
+/*--------------------------SPELL CSS---------------------------*/
+/*--------------------------SPELL CSS---------------------------*/
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-spell {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-spell {
+  margin-left: -7px;
+}
+.sheet-rolltemplate-spell .sheet-container {
+  border: 5px outset;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-spell .sheet-header {
+  background: rgb(0,0,128);
+    background: linear-gradient(90deg, rgba(0,0,128,1) 35%, rgba(14,113,184,1) 100%);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: #ead1dc;
+  padding: 5px;
+}
+.sheet-rolltemplate-spell .sheet-title {
+  font-size:2em;
+  background-color: #ead1dc;
+}
+.sheet-rolltemplate-spell .sheet-subtitle {
+  font-size:1em;
+  background-color: #ead1dc;
+}
+/* example colors 
+.sheet-rolltemplate-attack .sheet-container {
+  /* this is the default color */
+  --header-bg-color: #ead1dc;
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-spell .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-spell .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+/* Allprops part */
+.sheet-rolltemplate-spell .sheet-content {
+  display: grid;
+  background: #FEF68E;
+  background-size:100px 100px;
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-spell .sheet-content > div {
+  padding: 5px;
+}
+/* Left column */
+.sheet-rolltemplate-spell .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: center;
+  background: #FEF68E;
+}
+.sheet-rolltemplate-spell .sheet-value {
+    background-color: #FEF68E;
+    
+}
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-spell .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-spell .sheet-content :nth-child(4n) {
+  background:#FEF68E;
+}
+/* Description field */
+.sheet-rolltemplate-spell .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+  background: #FEF68E;
+}
+
+
+
+
+
+.sheet-buttonbox {
+    background-color: #fff;
+}
+
+button[type="roll"].sheet-textbutton::before { 
+    content: ''; 
+    
+}
+
+button[type="roll"].sheet-textbutton{
+  height: 19px;
+  border: none;
+  background: #ead1dc;
+}
+
+button[type="roll"].sheet-textbutton:hover{
+    background-color: #ead1dc;
+    border-radius: 10px;
+    background-position: 0 -28px;
+}
+
